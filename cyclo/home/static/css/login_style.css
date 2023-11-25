@@ -1,0 +1,121 @@
+
+body{
+    background-image: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.5),  url('/static/home/bg1.jpg'));
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+      background-attachment: fixed;
+  }
+  
+  
+  /* Reset some default styling */
+  body, h2, form {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    padding: 3px 3px;
+  }
+  
+  .auth {
+    width: 300px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .logo-title-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    margin-right: 20px; /* Adjust margin as needed */
+    max-width: 100px;
+  }
+  .logo img {
+    
+    max-width: 100px; /* Adjust the size as needed */
+    height: auto;
+  }
+  .title {
+    text-align: left;
+    margin: 10;
+    max-width: 100px;
+    margin-right: 10px; 
+    font-size: 22px; 
+    color: white; 
+  }
+  /* .nothing {
+    width: 750px;
+  } */
+  @media (max-width: 2024px) {
+    .nothing{
+        /* width: 750px; */
+        flex-basis: 100%; /* Take up full width on smaller screens */
+    }
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    /* padding-left:center; */
+    padding-top:150px;
+    align-items: center;
+    /* height: 100vh; */
+    /* background-image: url("background-image.jpg"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .login-form {
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    height: 150px;
+    width: 280px;
+  }
+  
+  .login-form input {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: white; /* Transparent background */
+  }
+  
+  .login-form button {
+    padding: 10px 20px;
+    background-color: #3c3c41;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .signup-button {
+    background-color: #bdb235; /* Different color for Sign Up button */
+  }
+  
+  .options {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .options a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    margin-top: 5px;
+  }

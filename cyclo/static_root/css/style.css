@@ -1,0 +1,442 @@
+body {
+    /* margin-left: 50px;
+    margin-right: 50px; */
+    padding: 0;
+    background: #EDE9E9; /* Replace with your desired gradient colors */
+    font-family: Arial, sans-serif;
+}
+/* Style the header and logo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #EDE9E9; /* Background for the header */
+    padding: 3px 3px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+.logo-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 10px; /* Adjust margin as needed */
+    max-width: 80px;
+}
+.logo img {
+    
+    max-width: 80px; /* Adjust the size as needed */
+    height: auto;
+}
+.title {
+    text-align: left;
+    margin: 10;
+    max-width: 100px;
+    margin-right: 10px; 
+    font-size: 18px; 
+    color: #333; 
+}
+/* .nothing {
+    width: 750px;
+} */
+@media (max-width: 2024px) {
+    .nothing{
+        /* width: 750px; */
+        flex-basis: 100%; /* Take up full width on smaller screens */
+    }
+}
+
+/* Styling for search bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.search-input {
+    padding: 5px 30px 5px 10px; /* Adjust padding as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-image: url('search_icon.png'); /* Replace with your search icon image */
+    background-repeat: no-repeat;
+    background-position: 95% center; /* Adjust the position of the icon */
+    background-size: 20px; /* Adjust the size of the icon */
+    width: 200px; /* Adjust width as needed */
+}
+
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-decoration,
+.search-input::-webkit-search-clear-button,
+.search-input::-webkit-search-results-button,
+.search-input::-webkit-search-results-decoration {
+    appearance: none;
+}
+
+/* Optional: Style on focus */
+.search-input:focus {
+    outline: none;
+    border-color: #666;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for sign-in link */
+
+.sign-in-link {
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 12px; /* Adjust margin as needed */
+}
+
+.sign-in-link .profile_icon {
+    font-size: 20px; /* Adjust icon size as needed */
+    margin-left: 0; /* Adjust margin between text and icon */
+}
+
+/* Optional: Style on hover */
+.sign-in-link:hover {
+    text-decoration: underline;
+}
+
+/* Styling for notification link */
+
+.notification-link {
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    margin-left: 10px; /* Adjust margin as needed */
+}
+
+.notification-icon {
+    font-size: 18px; /* Adjust icon size as needed */
+    margin-left: 5px; /* Adjust margin between icon and text */
+    /* color: #FF0000; */
+
+}
+
+/* Cart icon styles */
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon img {
+    width: 30px; /* Adjust the width and height as needed */
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Position the cart icon to the right */
+.cart-icon::before {
+    /* content: '2'; You can use a number to indicate the cart item count */
+    position: absolute;
+    top: 0;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+
+
+/* Style the slideshow container */
+.slideshow-container {
+    max-width: 100%;
+    height: 500px;
+    /* margin: 0 auto; */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Style individual slides */
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: 480px;
+    /* height: auto; */
+}
+
+/* Define the animation for fading in and out */
+.fade {
+    animation-name: fade;
+    animation-duration: 3s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ... Previous CSS styles ... */
+
+/* Style the caption dots */
+.dot-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+/* Highlight the active dot */
+.active {
+    background-color: #333;
+}
+
+/* Style for the container */
+/* .container {
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px;
+    
+} */
+
+.content{
+    margin-left: 60px;
+    margin-right: 50px;
+}
+
+/* Style for rows */
+.row {
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex; /* Use flexbox for rows */
+    margin-bottom: 20px; /* Add margin between rows */
+}
+
+/* Style for columns */
+.col {
+    flex: 1; /* Distribute column widths evenly within a row */
+    background-color: #fff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box; /* Include padding in the column's width */
+    border: 1px solid #ccc; /* Optional: Add a border for columns */
+    position: relative;/* Create a positioning context for the star button */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.ex_pr1{
+    color: black;
+    font-size: 15px;
+    
+}
+.ex_pr2{
+    color:gray;
+    font-size: 15px;
+    
+}
+
+/* Style for the heart button */
+.heart_button {
+    position: absolute;
+    top: 10px; /* Adjust the top position to place the button as desired */
+    right: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style for the star icon */
+.heart_icon {
+    color: #EDE9E9;
+    font-size: 30px;
+    
+}
+
+/* Style for the star icon when clicked */
+.heart_button.clicked .heart_icon {
+    color: #ff0000; /* Red color */
+}
+
+/* Style for the review stars container */
+.review-stars {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Style for each star */
+.star {
+    font-size: 20px;
+    color: grey; /* Yellow color for filled stars */
+}
+
+/* Style for a full star */
+.star-full {
+    color: #ffcc00; 
+    margin-right: 20;/* Yellow color for filled stars */
+}
+
+/* Style for a half star */
+.star-half {
+    color: #ffcc00; /* Yellow color for filled stars */
+    position: relative;
+    overflow: hidden;
+  
+    margin-right: 0;
+}
+* Style for an empty star */
+.star-empty {
+    color: #ccc; /* Color for empty stars */
+    margin-right: 5px; /* Adjust the margin to control spacing between stars */
+}
+
+/* Style for the price */
+.price {
+    margin-top: auto; /* Push the price to the bottom of the column */
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    
+    margin:0;
+}
+.pill-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pill-button:hover {
+    background-color: #2980b9;
+}
+
+
+/* Message Box */
+/* Existing modal styles */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-content {
+    background-color: #065858;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #023b3d;
+    width: 30%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* .close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #3b3b3b;
+  } */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+/* Reset some CSS properties */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply font-family to h3 elements */
+h3 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Define styles for the .alert class */
+.alert {
+  width: 50%;
+  margin: 20px auto;
+  padding: 30px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 0 8px 5px #ccc;
+}
+
+/* Define styles for the .close button */
+.close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  /* opacity: 0.5; */
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50%;
+  right: 15px;
+  top: 25px;
+  text-align: center;
+  font-size: 1.6em;
+  cursor: pointer;
+}
+
+.close_cart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    /* opacity: 0.5; */
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+    right: 15px;
+    top: 25px;
+    text-align: center;
+    font-size: 1.6em;
+    cursor: pointer;
+  }
+/* Define styles for the .simple-alert class */
+
+
+/* Define styles for the .success-alert class */
+.success-alert {
+  background-color: #a8f0c6;
+  border-left: 5px solid #028835;
+}
+
+.success-alert .close {
+  border-color: #87c59f;
+  color: #87c59f;
+}
+
+.success-alert-cart {
+    background-color: #f7a7a3;
+    border-left: 5px solid #e67067;
+}
+  
+  
+  
+  

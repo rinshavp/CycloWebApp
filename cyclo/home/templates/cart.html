@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/cart_style.css' %}">
+ 
+  <title>Login Page</title>
+</head>
+<body>
+    <header>
+        <div class="logo head_div">
+            <img src="{% static 'images/logo.png' %}" alt="Logo">
+        </div>
+        <div class="title head_div">
+            <h1>cyclo</h1>
+        </div>
+    </header>
+
+    <body>
+        <h1>Shopping cart</h1>
+        <a href="{% url 'home' %}">Home</a>
+        {% if cart_items %}
+            <ul>
+                {% for item in cart_items %}
+                <div class="outer-container">
+                    <div class="main-container">
+                        <div class="image-container">
+                            <!-- Content for the image container -->
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        </div>
+                        <div class="details-container">
+                            <!-- Content for the details container -->
+                            <li>{{ item.product.name }}</li>
+                            <li>{{ item.product.description }}</li>
+                            <li>Quantity: {{ item.quantity }}</li>
+                            <li>${{item.price}}</li>
+                        </div>
+                    </div>
+                    <footer class="remove-link">
+                        <!-- Content for the remove link -->
+                        <a href="{% url 'remove_from_cart' item.id %}">Remove</a>
+                    </footer>
+                </div>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Cart is empty</p>
+        {% endif %}
+        
+        <script src="" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <title >cyclo</title>
+
+    
+</head>
+<body>
+    <header>
+        <div class="logo head_div">
+            <img src="home/static/images/logo.png" alt="Logo">
+          
+        </div>
+        <div class="title head_div">
+          <h1 >cyclo</h1>
+        
+        </div>
+        <div class="nothing head_div">
+       
+        </div>
+        <div class="search-bar head_div">
+          <input type="text" class="search-input" placeholder="Search...">
+          <a href="login/" class="sign-in-link" title="User Profile">
+            <!-- <b>Profile</b> -->
+            <span class="profile_icon">&#128100;</span> <!-- Unicode for key icon -->
+          </a>
+          <a href="#" class="notification-link" title="Notification">
+            <span class="notification-icon">&#128276;</span> <!-- Unicode for bell icon -->
+          </a>
+          
+          <a href="{% url 'cart' %}">
+            <div class="cart-icon">
+              <img src="home/static/images/cart_logo.png" alt="Cart">
+            </div>
+        </a>
+        
+          
+        </div>
+       </header>
+
+       <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="home/static/images/slide_1.webp" alt="Image 1">
+        </div>
+        <div class="slide fade">
+            <img src="home/static/images/slide_2.webp" alt="Image 2">
+        </div>
+        <div class="slide fade">
+            <img src="home/static/images/image3.png" alt="Image 3">
+        </div>
+    </div>
+
+    <div class="dot-container">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+  </div>
+  <h2 class="content">Exclusive Products</h2>
+  <div class="container">
+    <div class="row">
+      {% for product in products %}
+          <div class="col">
+            <div class="heart_button" id="hb{{ forloop.counter }}">
+            <span class="heart_icon" id="hi{{ forloop.counter }}">&#10084;</span>
+            </div>
+  
+          <img src="{{ product.image.url }}" alt="{{ product.name }}">
+          <h1 class="ex_pr2">{{ product.name }}</h1>
+          <h2 class="ex_pr1">{{ product.description }}</h2>
+  
+          <div class="review-stars">
+            {% for star in product.stars %}
+                <span class="star {% if star == 'full' %}star-full{% else %}star-empty{% endif %}">&#9733;</span>
+            {% endfor %}
+        </div>
+        
+  
+          <div class="price">${{ product.price }}</div>
+         <form action="{% url 'add_to_cart' product.id %}" method="post">
+            {% csrf_token %} 
+            <button class="pill-button">Add to Cart</button>
+         </form> 
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <div id="myModal" class="modal">
+    <div class="alert success-alert">
+      <span class="close">&times;</span>
+      <h3>Item added to favorites..!</h3>
+    </div>
+  </div>
+  
+  <div id="add_to_cart" class="modal">
+    <div class="alert success-alert-cart">
+      <span class="close_cart">&times;</span>
+      <h3>Item added to cart..!</h3>
+    </div>
+  </div>
+ 
+<script src="{% static 'script.js/home.js' %}"></script>
+</body>
+</html>

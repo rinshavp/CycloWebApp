@@ -1,0 +1,89 @@
+body {
+    /* margin-left: 50px;
+    margin-right: 50px; */
+    padding: 0;
+    background: #EDE9E9; /* Replace with your desired gradient colors */
+    font-family: Arial, sans-serif;
+}
+/* Style the header and logo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #EDE9E9; /* Background for the header */
+    padding: 3px 3px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+.logo-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 10px; /* Adjust margin as needed */
+    max-width: 80px;
+}
+.logo img {
+    
+    max-width: 80px; /* Adjust the size as needed */
+    height: auto;
+}
+.title {
+    text-align: left;
+    margin: 10;
+    max-width: 100px;
+    margin-right: 10px; 
+    font-size: 18px; 
+    color: #333; 
+}
+/* .nothing {
+    width: 750px;
+} */
+@media (max-width: 2024px) {
+    .nothing{
+        /* width: 750px; */
+        flex-basis: 100%; /* Take up full width on smaller screens */
+    }
+}
+
+
+/* Your existing CSS styles */
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.outer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc; /* Add a border for visualization */
+    padding: 10px; /* Add padding for spacing */
+}
+
+.main-container {
+    display: flex;
+}
+
+.image-container {
+    /* Styles for the image container */
+    margin-right: 10px; /* Add margin for spacing */
+}
+
+.image-container img {
+    width: 100%; /* Make the image width 100% of its container */
+    height: 100%; /* Make the image height 100% of its container */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
+
+.details-container {
+    /* Styles for the details container */
+}
+
+.remove-link {
+    /* Styles for the remove link */
+}
