@@ -5,21 +5,57 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
+        {% load static %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>registration</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+              
+       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     </head>
     <body>
-        <h1>Register</h1>
-        <form method="post" >
+        <header>
+            <div class="logo head_div">
+                <img src="{% static 'images/logo.png' %}" alt="Logo">
+            </div>
+            <div class="title head_div">
+              <h1 >cyclo</h1>
+            </div>
+           
+        </header>
+
+        <h1>Let's go!</h1>
+        <h4>Create an account and explore with your dreams</h4>
+
+            <form class="registration-form" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}" class="placeholder-label" data-popup="Username Help">Username:</label>
+                {{ form.username }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}" class="placeholder-label" data-popup="Email Help">Email Address:</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}" class="placeholder-label" data-popup="Password Help">Password:</label>
+                {{ form.password1 }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}" class="placeholder-label" data-popup="Confirm Password Help">Confirm Password:</label>
+                {{ form.password2 }}
+            </div>
             <input type="submit" value='Register'>
         </form>
         
-        <script src="" async defer></script>
+        <!-- Hidden pop-up content -->
+        <div id="popup-content" style="display: none;">
+            <div id="popup-inner"></div>
+        </div>
+
+    
+
     </body>
 </html>
