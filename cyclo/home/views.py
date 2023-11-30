@@ -3,12 +3,21 @@ from django.contrib.auth import authenticate, login, logout
 from . models import Product,CartItem
 from . forms import UserRegistrationForm
 from django.shortcuts import get_object_or_404
-# from django.http import HttpResponse 
-# Create your views here.
+from django.core.cache import cache
+
+    
 
 def home(request):
-    products = Product.objects.all()
-    return render(request, 'index.html',{'products':products})
+    product_list = cache.get('product_list')
+
+    if product_list is None:
+        # If not in cache, fetch the data from the database
+        product_list = list(Product.objects.all())  # Convert QuerySet to list
+
+        # Store the product list in the cache for 15 minutes (900 seconds)
+        cache.set('product_list', product_list, 900)
+
+    return render(request, 'index.html', {'products': product_list})
 
 def login_user(request):
     if request.method == 'POST':
