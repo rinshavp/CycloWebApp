@@ -1,0 +1,1 @@
+The Cycle Shop Website is an online platform for showcasing and selling bicycles, cycling accessories, and related products. This web application provides an easy-to-use interface for customers to explore available products, make purchases, and stay updated on the latest cycling trends.
